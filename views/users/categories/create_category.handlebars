@@ -1,0 +1,35 @@
+<div class="text-center mt-5">
+  <h2>Criar nova categoria</h2>
+</div>
+
+<div class="card">
+
+  <div class="card-body">
+    <form action="/categorias/nova" method="POST">
+      <label for="nome">Nome:</label>
+      <input
+        id="nome"
+        name="nome"
+        type="text"
+        placeholder="Ex.: Esportes"
+        class="form-control"
+      />
+      <label for="descricao" class="mt-4">Descrição:</label>
+      <input
+        id="descricao"
+        type="text"
+        name="descricao"
+        placeholder="Conteudo da postagem"
+        class="form-control"
+      />
+      <br />
+      <button type="submit" class="btn btn-success">Criar categoria</button>
+    </form>
+  </div>
+
+</div>
+
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}

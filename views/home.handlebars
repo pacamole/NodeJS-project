@@ -1,0 +1,42 @@
+<body>
+  <div style="display: flex; flex-direction: row;">
+    <button><a href="/categorias">Categorias</a></button>
+  </div>
+
+  <div>
+    {{#each posts}}
+      <div class="card mt-4">
+        <div class="card-body">
+
+          <h3 class="mb-1">{{title}}</h3>
+          <hr />
+          <p>{{content}}</p>
+
+          <br />
+
+          <div style="display: flex; flex-direction: row;">
+            <a href="/postagens/editar"><Button
+                class="btn btn-success mt-4 mx-2"
+                style="transition: 0.15s;"
+              >Editar
+              </Button></a>
+
+            <form action="/postagens/deletar" method="post">
+              {{!-- <input type="hidden" name="id" value="{{id}}" /> --}}
+
+              <button
+                type="submit"
+                class="btn btn-danger mt-4"
+                style="transition: 0.15s;"
+              >Deletar
+              </button>
+
+            </form>
+          </div>
+
+          <small>{{createdAt}}</small>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</body>

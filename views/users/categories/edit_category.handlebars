@@ -1,0 +1,38 @@
+<div class="text-center mt-5">
+  <h2>Editar categoria</h2>
+</div>
+
+<div class="card">
+
+  <div class="card-body">
+    <form action="/categorias/editar" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="hidden" name="id" value="{{category.id}}" />
+      <input
+        id="nome"
+        name="nome"
+        type="text"
+        placeholder="Novo nome da categoria"
+        class="form-control"
+        value="{{category.title}}"
+      />
+      <label for="descricao">Descrição:</label>
+      <input
+        id="descricao"
+        type="text"
+        name="descricao"
+        placeholder="Nova descrição da categoria"
+        class="form-control"
+        value="{{category.description}}"
+      />
+      <br />
+      <button type="submit" class="btn btn-success">Editar categoria</button>
+    </form>
+  </div>
+
+</div>
+
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
